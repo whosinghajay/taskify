@@ -28,6 +28,8 @@ const buttonVariants = cva(
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
         inline: "h-auto px-2 py-1.5 text-sm",
+        own:"h-9 rounded-full px-3",
+        own2:"h-11 rounded-full px-8",
       },
     },
     defaultVariants: {
