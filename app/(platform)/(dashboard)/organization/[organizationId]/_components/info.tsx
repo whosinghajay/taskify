@@ -5,10 +5,14 @@ import { CreditCard } from "lucide-react";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export const Info = () => {
+interface InfoProps {
+  isPro: boolean;
+}
+
+export const Info = ({ isPro }: InfoProps) => {
   const { organization, isLoaded } = useOrganization();
 
-  if (!isLoaded) return <Info.Skeleton/>
+  if (!isLoaded) return <Info.Skeleton />;
   return (
     <div className="flex items-center gap-x-4">
       <div className="w-[60px] h-[60px] relative">
@@ -23,7 +27,7 @@ export const Info = () => {
         <p className="font-semibold text-xl">{organization?.name}</p>
         <div className="flex items-center text-xs text-muted-foreground">
           <CreditCard className="h-3 w-3 mr-1" />
-          Free
+          {isPro ? "Pro" : "Free"}
         </div>
       </div>
     </div>
